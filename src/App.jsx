@@ -4,6 +4,7 @@ import NavBar from './components/nav-bar/NavBar.component';
 import {Route, Switch} from 'react-router-dom';
 import Home from "./components/home/Home.component";
 import DayOf from "./components/day-of/DayOf.component";
+import Footer from "./components/footer/Footer.component";
 
 class App extends Component {
     constructor(props) {
@@ -33,6 +34,9 @@ class App extends Component {
                     <Route path={'/day-of'} component={DayOf}/>
                     <Route path={'/'} component={Home}/>
                 </Switch>
+                <footer>
+                    <Footer/>
+                </footer>
             </div>
 
         );
