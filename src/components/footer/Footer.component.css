@@ -1,0 +1,15 @@
+.organizer-logo {
+    display: flex;
+    justify-content: center;
+    background: url("/assets/images/circuit.svg") #373737 no-repeat center;
+    height: 412px;
+}
+
+.acknowledgement {
+    background-color: #2F2F2F;
+    padding: 8px 0;
+    text-align: center;
+    color: #6C6C6C;
+    font-size: 18px;
+    font-weight: 500;
+}

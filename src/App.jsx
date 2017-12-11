@@ -18,8 +18,11 @@ class App extends Component {
                     {name: 'Map', path: ''},
                     {name: 'Schedule', path: ''},
                     {name: 'Prizes', path: ''},
-                    {name: 'Hardware List', path: ''},
+                    {name: 'Hardware List', path: ''}
                 ]
+            },
+            footer: {
+                acknowledgement: 'Designed by Yang Liu. Graphical vectors created by Ikatod and Freepik - Freepik.com'
             }
         };
     }
@@ -35,7 +38,7 @@ class App extends Component {
                     <Route path={'/'} component={Home}/>
                 </Switch>
                 <footer>
-                    <Footer/>
+                    <Footer acknowledgement={this.state.footer.acknowledgement}/>
                 </footer>
             </div>
 
