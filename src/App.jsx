@@ -25,13 +25,16 @@ class App extends Component {
 
     render() {
         return (
-            <header>
-                <NavBar tabs={this.state.nav.tabs}/>
+            <div>
+                <header>
+                    <NavBar tabs={this.state.nav.tabs}/>
+                </header>
                 <Switch>
                     <Route path={'/day-of'} component={DayOf}/>
                     <Route path={'/'} component={Home}/>
                 </Switch>
-            </header>
+            </div>
+
         );
     }
 }
