@@ -10,16 +10,17 @@ class Introduction extends Component {
         }
     }
 
-    _createRow(row) {
-        return (<li>
-            <div className={'title'}>
-                <img src={row.icon}/>
-                <div>{row.title}</div>
-            </div>
-            <div className={'description'}>
-                {row.description}
-            </div>
-        </li>)
+    _createRow(row, index) {
+        return (
+            <li key={index}>
+                <div className={'title'}>
+                    <img src={row.icon}/>
+                    <div>{row.title}</div>
+                </div>
+                <div className={'description'}>
+                    {row.description}
+                </div>
+            </li>)
     }
 
     render() {
@@ -28,7 +29,7 @@ class Introduction extends Component {
                 <div className={'center'}>
                     <img className={'brain-img'} src={brainImage}/>
                     <ul>
-                        {this.state.rows.map(row => this._createRow(row))}
+                        {this.state.rows.map((row, index) => this._createRow(row, index))}
                     </ul>
                 </div>
             </div>);

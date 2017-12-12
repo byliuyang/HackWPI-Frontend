@@ -13,6 +13,7 @@ import devpostIcon from '../../assets/icons/devpost_logo.svg';
 import learnIcon from '../../assets/icons/learn.svg';
 import hackIcon from '../../assets/icons/hack.svg';
 import competeIcon from '../../assets/icons/compete.svg';
+import FAQ from "./faq/FAQ.component";
 
 class Home extends Component {
     constructor(props) {
@@ -63,7 +64,53 @@ class Home extends Component {
                     title: 'Compete',
                     description: `Present your project at the end of the hackathon to our panel of judges, and win various prizes! Grand prizes are available for the top three teams, the best overall, the best software, and the best hardware project. Additionally, smaller prizes will also be available for various categories.`
                 }
-            ]
+            ],
+            faq: {
+                leftColumn: [
+                    {
+                        question: 'What is a hackathon?',
+                        answer: 'A hackathon is where you turn your crazy ideas into real stuff. Hundreds of hackers from across the globe gather and build something they’re passionate about; come, dive in, and make the most incredible things you can imagine alongside fellow creators. You take care of building. We’ll take care of you.'
+                    },
+                    {
+                        question: 'Who can come?',
+                        answer: 'HACK@WPI applications are open to any enrolled college student (undergrad or grad), from all over the world.'
+                    },
+                    {
+                        question: 'What if I don’t know how to code?',
+                        answer: 'HACK@WPI is the perfect time and place to learn. We provide code “starter packs,” as well as great workshops and mentors to help you build something you can be proud of by the end of the weekend.'
+                    },
+                    {
+                        question: 'What should I bring?',
+                        answer: 'All you need is a valid student ID and a laptop. We provide the rest! (A change of clothes and a pillow and/or sleeping bag is recommended, though.)'
+                    },
+                    {
+                        question: 'What can I build?',
+                        answer: 'Anything your heart desires! Hardware, web, mobile, gaming; you name it, we’ll support it.'
+                    }
+                ],
+                rightColumn: [
+                    {
+                        question: 'What about hardware?',
+                        answer: 'We’ll have a hardware lounge with plenty of boards, tools, and gadgets for you to check out!'
+                    },
+                    {
+                        question: 'What if I’m a WPI student?',
+                        answer: 'Any WPI student that fills out the WPI registration (will be released in December) and confirms by January 1st will be guaranteed admission.'
+                    },
+                    {
+                        question: 'What does it cost?',
+                        answer: 'HACK@WPI is free for all accepted hackers. We provide meals, caffeine, swag, workspace, and WiFi for the weekend; unfortunately, travel reimbursements or bussing will not be available for qualifying hackers.'
+                    },
+                    {
+                        question: 'What is the HACK@WPI code of conduct?',
+                        answer: 'You can read it <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">here</a>.'
+                    },
+                    {
+                        question: 'I have some other question!',
+                        answer: 'Email us at <a href="mailto:hack@wpi.edu">hack@wpi.edu</a>. We gotchu.'
+                    }
+                ]
+            }
         }
 
     }
@@ -73,6 +120,7 @@ class Home extends Component {
             <div id={'home'}>
                 <Banner data={this.state.banner}/>
                 <Introduction data={this.state.introduction}/>
+                <FAQ data={this.state.faq}/>
             </div>)
     }
 }

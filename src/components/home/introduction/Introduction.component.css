@@ -7,6 +7,7 @@
 .introduction .center ul {
     list-style: none;
     color: white;
+    margin: 0;
 }
 
 .introduction ul li:not(:first-child) {

@@ -20,8 +20,8 @@ class Banner extends Component {
                         <div className={'date'}>{this.state.date}</div>
                         <ul className={'buttons'}>
                             {
-                                this.state.buttons.map(button => (
-                                    <a href={button.link}>
+                                this.state.buttons.map((button, index) => (
+                                    <a href={button.link} key={index}>
                                         <li className={button.color}>
                                             {button.name}
                                         </li>
@@ -31,8 +31,8 @@ class Banner extends Component {
                         </ul>
                         <ul className={'links'}>
                             {
-                                this.state.links.map(link => (
-                                        <li>
+                                this.state.links.map((link, index) => (
+                                        <li key={index}>
                                             <img src={link.icon}/>
                                             <a href={link.url}>
                                                 {link.name}
