@@ -1,27 +1,18 @@
 import React, {Component} from 'react';
 import './Home.component.css';
-import Banner from "./banner/Banner.component";
-import Introduction from "./introduction/Introduction.component";
+import Banner from './banner/Banner.component';
+import Introduction from './introduction/Introduction.component';
 
-
-import hackWPILogo from '../../assets/icons/hackwpi_logo.svg';
-
-import mlhLogo from '../../assets/icons/mlh_logo.svg';
-import slackIcon from '../../assets/icons/slack_logo.svg';
-import devpostIcon from '../../assets/icons/devpost_logo.svg';
-
-import learnIcon from '../../assets/icons/learn.svg';
-import hackIcon from '../../assets/icons/hack.svg';
-import competeIcon from '../../assets/icons/compete.svg';
-import FAQ from "./faq/FAQ.component";
+import FAQ from './faq/FAQ.component';
+import Sponsors from './sponsors/Sponsors.component';
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
             banner: {
-                hackWPILogo: hackWPILogo,
-                mlhLogo: mlhLogo,
+                hackWPILogo: '/assets/images/logos/hackwpi_logo.svg',
+                mlhLogo: '/assets/images/logos/mlh_logo.svg',
                 date: 'January 12-14, 2018',
                 buttons: [
                     {
@@ -37,12 +28,12 @@ class Home extends Component {
                 ],
                 links: [
                     {
-                        icon: slackIcon,
+                        icon: '/assets/images/logos/slack_logo.svg',
                         name: 'Join Slack',
                         url: 'http://hack.wpi.edu/register'
                     },
                     {
-                        icon: devpostIcon,
+                        icon: '/assets/images/logos/devpost_logo.svg',
                         name: 'Project Gallery',
                         url: 'https://hack-wpi.devpost.com/submissions'
                     }
@@ -50,17 +41,17 @@ class Home extends Component {
             },
             introduction: [
                 {
-                    icon: learnIcon,
+                    icon: '/assets/images/icons/learn.svg',
                     title: 'Learn',
                     description: `Participate in the workshops taught by experienced students and learn everything you need to take your project from idea to reality. Ask currently employed Mentors for help when needed.`
                 },
                 {
-                    icon: hackIcon,
+                    icon: '/assets/images/icons/hack.svg',
                     title: 'Hack',
                     description: `Work all weekend long to build and hack your project together. We provide food, snacks, drinks, and entertainment; everything you need to stay focused and have fun for the whole event.`
                 },
                 {
-                    icon: competeIcon,
+                    icon: '/assets/images/icons/compete.svg',
                     title: 'Compete',
                     description: `Present your project at the end of the hackathon to our panel of judges, and win various prizes! Grand prizes are available for the top three teams, the best overall, the best software, and the best hardware project. Additionally, smaller prizes will also be available for various categories.`
                 }
@@ -110,9 +101,15 @@ class Home extends Component {
                         answer: 'Email us at <a href="mailto:hack@wpi.edu">hack@wpi.edu</a>. We gotchu.'
                     }
                 ]
-            }
+            },
+            sponsors: [
+                [
+                    '/assets/images/logos/google.png',
+                    '/assets/images/logos/microsoft.svg',
+                    '/assets/images/logos/facebook.png'
+                ]
+            ]
         }
-
     }
 
     render() {
@@ -121,6 +118,7 @@ class Home extends Component {
                 <Banner data={this.state.banner}/>
                 <Introduction data={this.state.introduction}/>
                 <FAQ data={this.state.faq}/>
+                <Sponsors data={this.state.sponsors}/>
             </div>)
     }
 }

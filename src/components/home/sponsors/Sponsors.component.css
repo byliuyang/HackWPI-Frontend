@@ -1,0 +1,48 @@
+.sponsors {
+    display          : block;
+    background-color : #F5F5F5;
+    padding-top      : 100px;
+}
+
+.sponsors .title {
+    display: flex;
+    justify-content: center;
+}
+
+.sponsors .title img {
+    display : block;
+}
+
+.sponsors .sponsor-logos {
+    padding : 100px 0;
+}
+
+.sponsors .sponsor-logos ul {
+    list-style: none;
+    padding: 0;
+    margin  : 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sponsors .sponsor-logos ul:not(:first-child) {
+    margin-top: 50px;
+}
+
+.sponsors .sponsor-logos ul li {
+    width: 20%;
+}
+
+.sponsors .sponsor-logos ul li img {
+    width: 100%;
+}
+
+.sponsors .swag-image {
+    display: flex;
+    justify-content: center;
+}
+
+.sponsors .swag-image img {
+    display : block;
+    margin-bottom: -1px;
+}
