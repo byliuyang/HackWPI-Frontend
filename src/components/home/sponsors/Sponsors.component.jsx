@@ -17,12 +17,12 @@ class Sponsors extends Component {
                         <img src={sponsorText}/>
                     </div>
                     <div className={'sponsor-logos'}>
-                        {this.state.map(row =>
-                            <ul>
+                        {this.state.rows.map((row, rowIndex) =>
+                            <ul key={rowIndex}>
                                 {
-                                    row.map(companyLogo =>
+                                    row.map((companyLogo, companyIndex) =>
                                         (
-                                            <li>
+                                            <li key={companyIndex}>
                                                 <img src={companyLogo}/>
                                             </li>
                                         ))

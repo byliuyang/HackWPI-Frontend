@@ -5,9 +5,7 @@ import brainImage from './brain.svg';
 class Introduction extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            rows: props.data
-        }
+        this.state = props.data;
     }
 
     _createRow(row, index) {
