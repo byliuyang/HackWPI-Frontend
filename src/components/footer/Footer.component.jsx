@@ -1,19 +1,16 @@
 import React, {Component} from 'react';
 import './Footer.component.css';
-import acmLogo from './acm_logo.svg';
 
 class Footer extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            acknowledgement: props.acknowledgement
-        }
+        this.state = props.data
     }
     render() {
         return (
             <div>
             <div className={'organizer-logo'}>
-                <img src={acmLogo}/>
+                <img src={this.state.organizerLogo}/>
             </div>
                 <div className={'acknowledgement'}>
                     {this.state.acknowledgement}

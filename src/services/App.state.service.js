@@ -1,6 +1,7 @@
 class AppStateService {
     constructor() {
         this.appState = {
+            favicon: '/assets/favicon.jpg',
             nav: {
                 selected: 0,
                 tabs: [
@@ -13,10 +14,12 @@ class AppStateService {
                 ]
             },
             footer: {
+                organizerLogo: '/assets/images/logos/acm_logo.svg',
                 acknowledgement: 'Designed by Yang Liu. Graphical vectors created by Ikatod and Freepik - Freepik.com'
             },
             pages: {
                 home: {
+                    title: 'Hack@WPI | Home',
                     banner: {
                         hackWPILogo: '/assets/images/logos/hackwpi_logo.svg',
                         mlhLogo: '/assets/images/logos/mlh_logo.svg',
@@ -127,6 +130,7 @@ class AppStateService {
 
     getAppState() {
         return ({
+            favicon: this.appState.favicon,
             nav: this.appState.nav,
             footer: this.appState.footer
         });
