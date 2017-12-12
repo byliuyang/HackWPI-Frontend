@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './Banner.component.css';
 
 import techGoat from './tech_goat.svg';
-import hackWPILogo from './hackwpi_logo.svg';
 
 class Banner extends Component {
     constructor(props) {
@@ -16,7 +15,7 @@ class Banner extends Component {
                 <img className={'mlh-logo'} src={this.state.mlhLogo}/>
                 <div className={'center'}>
                     <img className={'tech-goat-img'} src={techGoat}/>
-                    <img className={'hack-wpi-logo-img'} src={hackWPILogo}/>
+                    <img className={'hack-wpi-logo-img'} src={this.state.hackWPILogo}/>
                     <div className={'content'}>
                         <div className={'date'}>{this.state.date}</div>
                         <ul className={'buttons'}>

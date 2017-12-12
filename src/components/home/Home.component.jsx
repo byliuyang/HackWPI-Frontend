@@ -3,19 +3,23 @@ import './Home.component.css';
 import Banner from "./banner/Banner.component";
 import Introduction from "./introduction/Introduction.component";
 
-import mlhLogo from './icons/mlh_logo.svg';
-import slackIcon from './icons/slack_logo.svg';
-import devpostIcon from './icons/devpost_logo.svg';
 
-import learnIcon from './icons/learn.svg';
-import hackIcon from './icons/hack.svg';
-import competeIcon from './icons/compete.svg';
+import hackWPILogo from '../../assets/icons/hackwpi_logo.svg';
+
+import mlhLogo from '../../assets/icons/mlh_logo.svg';
+import slackIcon from '../../assets/icons/slack_logo.svg';
+import devpostIcon from '../../assets/icons/devpost_logo.svg';
+
+import learnIcon from '../../assets/icons/learn.svg';
+import hackIcon from '../../assets/icons/hack.svg';
+import competeIcon from '../../assets/icons/compete.svg';
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
             banner: {
+                hackWPILogo: hackWPILogo,
                 mlhLogo: mlhLogo,
                 date: 'January 12-14, 2018',
                 buttons: [
