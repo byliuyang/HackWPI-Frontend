@@ -24,8 +24,7 @@ class App extends Component {
             footer: {
                 acknowledgement: 'Designed by Yang Liu. Graphical vectors created by Ikatod and Freepik - Freepik.com'
             }
-        }
-        ;
+        };
     }
 
     render() {

@@ -65,6 +65,11 @@
 
 .banner .content .buttons a:not(:first-child) li {
     margin-left: 10px;
+    transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.banner .content .buttons a li:hover {
+    opacity: 0.8;
 }
 
 .banner .content .orange {
@@ -92,4 +97,8 @@
     text-decoration: none;
     margin: 5px 0 0 18px;
     font-size: 22px;
+}
+
+.banner .content .links li a:hover {
+    text-decoration: underline;
 }
