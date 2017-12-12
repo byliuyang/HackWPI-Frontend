@@ -13,6 +13,7 @@ class AppStateService {
                 ]
             },
             footer: {
+                organizerLogo: '/assets/images/logos/acm_logo.svg',
                 acknowledgement: 'Designed by Yang Liu. Graphical vectors created by Ikatod and Freepik - Freepik.com'
             },
             pages: {

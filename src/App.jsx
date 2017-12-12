@@ -24,7 +24,7 @@ class App extends Component {
                     <Route path={'/'} component={Home}/>
                 </Switch>
                 <footer>
-                    <Footer acknowledgement={this.state.footer.acknowledgement}/>
+                    <Footer data={this.state.footer}/>
                 </footer>
             </div>
 
