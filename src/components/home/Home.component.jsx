@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import DocumentTitle from 'react-document-title';
+
 import './Home.component.css';
 import Banner from './banner/Banner.component';
 import Introduction from './introduction/Introduction.component';
@@ -16,12 +18,14 @@ class Home extends Component {
 
     render() {
         return (
-            <div id={'home'}>
-                <Banner data={this.state.banner}/>
-                <Introduction data={this.state.introduction}/>
-                <FAQ data={this.state.faq}/>
-                <Sponsors data={this.state.sponsors}/>
-            </div>)
+            <DocumentTitle title={this.state.title}>
+                <div id={'home'}>
+                    <Banner data={this.state.banner}/>
+                    <Introduction data={this.state.introduction}/>
+                    <FAQ data={this.state.faq}/>
+                    <Sponsors data={this.state.sponsors}/>
+                </div>
+            </DocumentTitle>)
     }
 }
 

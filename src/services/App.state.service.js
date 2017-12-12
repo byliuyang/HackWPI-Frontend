@@ -18,6 +18,7 @@ class AppStateService {
             },
             pages: {
                 home: {
+                    title: 'Hack@WPI | Home',
                     banner: {
                         hackWPILogo: '/assets/images/logos/hackwpi_logo.svg',
                         mlhLogo: '/assets/images/logos/mlh_logo.svg',
