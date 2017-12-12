@@ -8,7 +8,7 @@ import Introduction from './introduction/Introduction.component';
 import FAQ from './faq/FAQ.component';
 import Sponsors from './sponsors/Sponsors.component';
 
-import appStateService from '../../services/App.state.service';
+import appStateService from '../../../services/App.state.service';
 
 class Home extends Component {
     constructor(props) {
@@ -26,7 +26,7 @@ class Home extends Component {
 
     render() {
         if (this.state.loading)
-            return (<div>Loading</div>);
+            return (<div></div>);
         else
             return (
                 <DocumentTitle title={this.state.title}>

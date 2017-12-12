@@ -1,6 +1,7 @@
 class AppStateService {
     constructor() {
-        this.BASE_URL = 'http://localhost:8000/api';
+        this.SERVER_URL = 'http://localhost:8000';
+        this.BASE_URL = `${this.SERVER_URL}/api`;
     }
 
     _getState(path) {
