@@ -1,6 +1,7 @@
 class AppStateService {
     constructor() {
         this.appState = {
+            favicon: '/assets/favicon.jpg',
             nav: {
                 selected: 0,
                 tabs: [
@@ -129,6 +130,7 @@ class AppStateService {
 
     getAppState() {
         return ({
+            favicon: this.appState.favicon,
             nav: this.appState.nav,
             footer: this.appState.footer
         });

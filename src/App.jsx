@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Favicon from 'react-favicon';
 import './App.css';
 import NavBar from './components/nav-bar/NavBar.component';
 import {Route, Switch} from 'react-router-dom';
@@ -15,6 +16,7 @@ class App extends Component {
     render() {
         return (
             <div>
+                <Favicon url={this.state.favicon} />
                 <header>
                     <NavBar tabs={this.state.nav.tabs}/>
                 </header>
