@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-import logo from './logo.svg';
 import './NavBar.component.css';
 import {withRouter} from "react-router-dom";
 
@@ -9,6 +8,7 @@ class NavBar extends Component {
         super(props);
 
         this.state = {
+            logo: props.logo,
             selected: props.selected || 0,
             tabs: props.tabs
         };
@@ -37,7 +37,7 @@ class NavBar extends Component {
         return (
             <nav>
                 <div className="center">
-                    <img src={logo}/>
+                    <img src={this.state.logo}/>
                     <ul>
                         {this.state.tabs.map((tab, i) =>
                             this._createTab(tab, i))}

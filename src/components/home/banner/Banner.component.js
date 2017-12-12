@@ -15,7 +15,7 @@ class Banner extends Component {
                 <img className={'mlh-logo'} src={this.state.mlhLogo}/>
                 <div className={'center'}>
                     <img className={'tech-goat-img'} src={techGoat}/>
-                    <img className={'hack-wpi-logo-img'} src={this.state.hackWPILogo}/>
+                    <img className={'big-logo-img'} src={this.state.logo}/>
                     <div className={'content'}>
                         <div className={'date'}>{this.state.date}</div>
                         <ul className={'buttons'}>

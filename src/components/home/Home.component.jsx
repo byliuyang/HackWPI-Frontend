@@ -13,19 +13,30 @@ import appStateService from '../../services/App.state.service';
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = appStateService.getHomepageState();
+        this.state = {
+            loading: true
+        };
+
+        appStateService.getHomepageState().then(state => {
+            this.setState(Object.assign({}, state, {
+                loading: false
+            }));
+        });
     }
 
     render() {
-        return (
-            <DocumentTitle title={this.state.title}>
-                <div id={'home'}>
-                    <Banner data={this.state.banner}/>
-                    <Introduction data={this.state.introduction}/>
-                    <FAQ data={this.state.faq}/>
-                    <Sponsors data={this.state.sponsors}/>
-                </div>
-            </DocumentTitle>)
+        if (this.state.loading)
+            return (<div>Loading</div>);
+        else
+            return (
+                <DocumentTitle title={this.state.title}>
+                    <div id={'home'}>
+                        <Banner data={this.state.banner}/>
+                        <Introduction data={this.state.introduction}/>
+                        <FAQ data={this.state.faq}/>
+                        <Sponsors data={this.state.sponsors}/>
+                    </div>
+                </DocumentTitle>);
     }
 }
 
