@@ -5,26 +5,13 @@ import {Route, Switch} from 'react-router-dom';
 import Home from "./components/home/Home.component";
 import DayOf from "./components/day-of/DayOf.component";
 import Footer from "./components/footer/Footer.component";
+import appStateService from './services/App.state.service';
 
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            nav: {
-                selected: 0,
-                tabs: [
-                    {name: 'Home', path: '/'},
-                    {name: 'Day Of', path: '/day-of'},
-                    {name: 'Map', path: ''},
-                    {name: 'Schedule', path: ''},
-                    {name: 'Prizes', path: ''},
-                    {name: 'Hardware List', path: ''}
-                ]
-            },
-            footer: {
-                acknowledgement: 'Designed by Yang Liu. Graphical vectors created by Ikatod and Freepik - Freepik.com'
-            }
-        };
+        this.state = appStateService.getAppState();
+
     }
 
     render() {
@@ -34,7 +21,6 @@ class App extends Component {
                     <NavBar tabs={this.state.nav.tabs}/>
                 </header>
                 <Switch>
-                    <Route path={'/day-of'} component={DayOf}/>
                     <Route path={'/'} component={Home}/>
                 </Switch>
                 <footer>

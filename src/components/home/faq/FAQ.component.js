@@ -13,9 +13,9 @@ class FAQ extends Component {
         return {__html: text};
     }
 
-    _createQA(qa) {
+    _createQA(qa, index) {
         return (
-            <li>
+            <li key={index}>
                 <div className={'question'}>{qa.question}</div>
                 <div className={'answer'} dangerouslySetInnerHTML={this._createDangerousHTML(qa.answer)}/>
             </li>
@@ -30,10 +30,10 @@ class FAQ extends Component {
                     <h1>FAQ</h1>
                     <div className={'questions'}>
                         <ul>
-                            {this.state.leftColumn.map(qa => this._createQA(qa))}
+                            {this.state.leftColumn.map((qa, index) => this._createQA(qa, index))}
                         </ul>
                         <ul>
-                            {this.state.rightColumn.map(qa => this._createQA(qa))}
+                            {this.state.rightColumn.map((qa, index)  => this._createQA(qa, index))}
                         </ul>
                     </div>
                 </div>
