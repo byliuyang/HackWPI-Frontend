@@ -1,0 +1,38 @@
+.introduction {
+    padding: 100px 0;
+    background-color: #414141;
+    margin: 0 0 30px 0;
+}
+
+.introduction .center ul {
+    list-style: none;
+    color: white;
+}
+
+.introduction ul li:not(:first-child) {
+    margin-top: 80px;
+}
+
+.introduction .title {
+    display: flex;
+    font-size: 58px;
+    letter-spacing: 6px;
+}
+
+.introduction .title img {
+    margin-right: 30px;
+}
+
+.introduction .description {
+    line-height: 38px;
+    margin-top: 28px;
+    font-size: 22px;
+    letter-spacing: 4px;
+    font-weight: 300;
+}
+
+.introduction .brain-img {
+    display: inline;
+    margin-left: 70px;
+    float: right;
+}

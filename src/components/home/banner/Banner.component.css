@@ -1,0 +1,95 @@
+.banner {
+    position: relative;
+    height: 840px;
+    background: url('/assets/images/bg_drawing.svg') #FFFDE6 no-repeat;
+    background-position-y: 130px;
+    background-position-x: center;
+}
+
+.banner .mlh-logo {
+    position: absolute;
+    top: 0;
+    right: 40px;
+}
+
+.banner .center {
+    position: relative;
+}
+
+.banner .tech-goat-img {
+    position: absolute;
+    top: 320px;
+}
+
+.banner .hack-wpi-logo-img {
+    position: absolute;
+    top: 340px;
+    right: 0;
+}
+
+.banner .content {
+    position: absolute;
+    top: 440px;
+    right: 0;
+}
+
+.banner .content .date {
+    text-align: right;
+    font-size: 32px;
+    color: #5D4037;
+}
+
+.banner .content ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    list-style: none;
+}
+
+.banner .content .buttons {
+    margin: 22px 0 0 0;
+}
+
+.banner .content .buttons li {
+    padding: 8px 0;
+    width: 166px;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    border-radius: 4px;
+}
+
+.banner .content .buttons a {
+    text-decoration: none;
+}
+
+.banner .content .buttons a:not(:first-child) li {
+    margin-left: 10px;
+}
+
+.banner .content .orange {
+    background-color: #F07206;
+}
+
+.banner .content .gray {
+    background-color: #545454;
+}
+
+.banner .content .links {
+    margin-top: 52px;
+}
+
+.banner .content .links li {
+    display: flex;
+}
+
+.banner .content .links li:not(:first-child) {
+    margin-left: 30px;
+}
+
+.banner .content .links li a {
+    color: #626262;
+    text-decoration: none;
+    margin: 5px 0 0 18px;
+    font-size: 22px;
+}
