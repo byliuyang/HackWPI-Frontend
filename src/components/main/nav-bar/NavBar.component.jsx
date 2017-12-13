@@ -39,8 +39,10 @@ class NavBar extends Component {
                 <div className="center">
                     <img src={this.state.logo}/>
                     <ul>
-                        {this.state.tabs.map((tab, i) =>
-                            this._createTab(tab, i))}
+                        {this.state.tabs
+                            .filter(tab => tab.enabled)
+                            .map((tab, i) =>
+                                this._createTab(tab, i))}
                     </ul>
                 </div>
             </nav>

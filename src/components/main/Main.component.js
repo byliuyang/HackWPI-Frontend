@@ -16,7 +16,7 @@ class Main extends Component {
             loading: true
         };
 
-        appStateService.getAppState().then(state => {
+        appStateService.getCommonState().then(state => {
             this.setState(Object.assign({}, state, {
                 loading: false
             }));

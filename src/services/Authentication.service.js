@@ -1,6 +1,9 @@
 class AuthenticationService {
     constructor() {
+        this.BASE_URL = `/api/oauth2`;
+
         this.AUTHENTICATED_KEY = 'authenticated';
+        this.TOKEN_KEY = 'token';
 
         this.authenticated = localStorage.getItem('authenticated') === 'true';
         this.token = null;
@@ -8,11 +11,30 @@ class AuthenticationService {
 
     authenticate(email, password) {
         return new Promise((success, fail) => {
-            if (email === 'hack@wpi.edu' && password === 'password') {
-                localStorage.setItem(this.AUTHENTICATED_KEY, true);
-                this.authenticated = true;
-                success();
-            } else fail();
+            let headers = new Headers();
+            headers.append("Content-Type", "application/json");
+
+            fetch(`${this.BASE_URL}/token`, {
+                method: 'post',
+                headers: headers,
+                body: JSON.stringify({
+                    email,
+                    password
+                })
+            })
+                .then(response => {
+                    if (response.status !== 200) {
+                        fail();
+                        return;
+                    }
+
+                    response.text().then(token => {
+                        localStorage.setItem(this.TOKEN_KEY, token);
+                        localStorage.setItem(this.AUTHENTICATED_KEY, true);
+                        this.authenticated = true;
+                        success();
+                    });
+                });
         });
 
     }

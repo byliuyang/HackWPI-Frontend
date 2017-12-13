@@ -1,7 +1,7 @@
 class AppStateService {
     constructor() {
-        this.SERVER_URL = 'http://localhost:8000';
-        this.BASE_URL = `${this.SERVER_URL}/api`;
+        this.BASE_URL = `/api`;
+        this.TOKEN_KEY = 'token';
     }
 
     _getState(path) {
@@ -20,8 +20,35 @@ class AppStateService {
         });
     }
 
-    getAppState() {
-        return this._getState('app');
+    _setState(path, state) {
+        return new Promise((success, fail) => {
+            let headers = new Headers();
+            let token = localStorage.getItem(this.TOKEN_KEY);
+            headers.append('Authorization', `Bearer ${token}`);
+            headers.append("Content-Type", "application/json");
+
+            fetch(`${this.BASE_URL}/${path}`, {
+                method: 'put',
+                headers: headers,
+                body: JSON.stringify(state)
+            })
+                .then(response => {
+                    if (response.status >= 400) {
+                        fail();
+                        return;
+                    }
+
+                    success();
+                });
+        });
+    }
+
+    setCommonState(state) {
+        return this._setState('common', state);
+    }
+
+    getCommonState() {
+        return this._getState('common');
     }
 
     getHomepageState() {
