@@ -8,6 +8,8 @@ import SwipeableViews from 'react-swipeable-views';
 import './AdminDashboard.component.css';
 import {Link} from "react-router-dom";
 import Avatar from "material-ui/Avatar";
+import takeoffIcon from "./takeoff.svg";
+import authenticationService from './../../../services/Authentication.service';
 
 class AdminDashboard extends Component {
     constructor(props) {
@@ -34,25 +36,33 @@ class AdminDashboard extends Component {
         this.setState(this.state);
     }
 
+    _signOut() {
+        authenticationService.signOut();
+        this.props.history.push('/sign-in');
+    }
+
     render() {
         return (
             <div className={'admin-dashboard'}>
                 <AppBar position="static" className={'app-bar'}>
                     <Toolbar>
-                        <Link to="/">
+                        <Link to="/" className={'home-page-link'}>
                             <img className={'logo'} src={'/assets/images/logos/logo.svg'}/>
                         </Link>
                         <Typography className={'title'} type="title" color="inherit">
                             Admin Panel
                         </Typography>
-                        <div className={'user-info'}>
+                        <div className={'right-controls'}>
                             <Avatar src={'https://scontent.fzty2-1.fna.fbcdn.net/v/t1.0-9/12308259_753900598089381_803897555683033169_n.jpg?oh=fe47206f4ea9e55490644cad4e6d9430&oe=5AC89826'}/>
                             <div className={'user-name'}>Harry Liu</div>
+                            <img className={'sign-out'} src={takeoffIcon} onClick={()=>{
+                                this._signOut();
+                            }}/>
                         </div>
                     </Toolbar>
                 </AppBar>
                 <AppBar position="static" color={'default'} className={'tab-bar'}>
-                    <Tabs fullWidth value={this.state.tabs.currentIndex} onChange={(event, value) => {
+                    <Tabs centered value={this.state.tabs.currentIndex} onChange={(event, value) => {
                         this._switchTab(event, value)
                     }} scrollable scrollButtons="off">
                         {

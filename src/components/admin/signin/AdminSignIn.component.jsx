@@ -3,9 +3,12 @@ import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 import {FormControl} from 'material-ui/Form';
 import Input, {InputLabel} from 'material-ui/Input';
-import { withStyles } from 'material-ui/styles';
+import {withStyles} from 'material-ui/styles';
+
+import authenticationService from './../../../services/Authentication.service';
 
 import './AdminSignIn.component.css';
+import {withRouter} from "react-router-dom";
 
 const styles = theme => ({
     inputLabelFocused: {
@@ -35,6 +38,21 @@ class AdminSignIn extends Component {
                 [name]: event.target.value
             })
         };
+    }
+
+    _signIn() {
+        authenticationService.authenticate(this.state.email, this.state.password)
+            .then(() => {
+                this.props.history.push('/admin');
+            }, () => {
+            });
+    }
+
+    componentWillMount() {
+        if(authenticationService.isAuthenticated()) {
+            console.log('authenticated');
+            this.props.history.push('/admin');
+        }
     }
 
     render() {
@@ -74,7 +92,9 @@ class AdminSignIn extends Component {
                                             type={'password'}
                                         />
                                     </FormControl>
-                                    <div className={'sign-in-button row'}>
+                                    <div className={'sign-in-button row'} onClick={() => {
+                                        this._signIn()
+                                    }}>
                                         Sign In
                                     </div>
                                 </div>
@@ -87,4 +107,4 @@ class AdminSignIn extends Component {
     }
 }
 
-export default withStyles(styles)(AdminSignIn);
+export default withStyles(styles)(withRouter(AdminSignIn));

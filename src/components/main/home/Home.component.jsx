@@ -8,7 +8,7 @@ import Introduction from './introduction/Introduction.component';
 import FAQ from './faq/FAQ.component';
 import Sponsors from './sponsors/Sponsors.component';
 
-import appStateService from '../../../services/App.state.service';
+import appStateService from '../../../services/AppState.service';
 
 class Home extends Component {
     constructor(props) {

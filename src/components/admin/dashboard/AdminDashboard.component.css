@@ -24,21 +24,35 @@
     letter-spacing: 3px;
 }
 
-.admin-dashboard .app-bar .user-info {
+.admin-dashboard .app-bar .right-controls {
     position: absolute;
     display: flex;
     right: 24px;
 }
 
-.admin-dashboard .app-bar .user-info .user-name {
-    margin-left: 16px;
+.admin-dashboard .app-bar .right-controls .user-name {
+    margin: 0 16px;
     font-size: 20px;
     padding-top: 8px;
     letter-spacing: 2px;
 }
 
+.admin-dashboard .app-bar .right-controls .sign-out {
+    transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.admin-dashboard .home-page-link {
+    font-size: 0;
+}
+
+.admin-dashboard .app-bar .right-controls .sign-out:hover {
+    cursor: pointer;
+    opacity : 0.6;
+}
+
 .admin-dashboard .tab-bar {
     background-color: white;
+    padding: 0 40px;
 }
 
 .admin-dashboard .tab-content, .admin-dashboard .tab-content .group  {

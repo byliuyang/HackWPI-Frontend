@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import appStateService from "./../../services/App.state.service";
+import appStateService from "../../services/AppState.service";
 import Home from "./home/Home.component";
 import Switch from "react-router-dom/es/Switch";
 import {Route} from "react-router-dom";
