@@ -60,6 +60,10 @@
     padding : 0 40px 40px 40px;
 }
 
+.admin-dashboard .tab-content .content {
+    margin-right: 100px;
+}
+
 .admin-dashboard .tab-content .group {
     padding : 40px;
 }
@@ -75,4 +79,37 @@
     font-size   : 22px;
     padding     : 0 24px;
     margin      : 60px 0 0 0;
+}
+
+.admin-dashboard .row:not(:first-child) {
+    margin-top: 40px;
+}
+
+.admin-dashboard .row .control {
+    width: 100%;
+}
+
+.admin-dashboard .preview {
+    max-width: 200px;
+    max-height: 200px;
+    margin-top: 20px;
+    background-image: url('/assets/images/transparent.svg');
+    padding: 10px;
+}
+
+.admin-dashboard .preview.red {
+    background: none #ba3f3f;
+}
+
+.admin-dashboard .preview.dark {
+    background: none #373737;
+}
+
+.admin-dashboard .save-button {
+    display: block;
+    float: right;
+    position : fixed;
+    right: 42px;
+    bottom: 100px;
+    z-index: 100;
 }
