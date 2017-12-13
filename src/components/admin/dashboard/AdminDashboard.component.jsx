@@ -53,9 +53,10 @@ class AdminDashboard extends Component {
                             Admin Panel
                         </Typography>
                         <div className={'right-controls'}>
-                            <Avatar src={'https://scontent.fzty2-1.fna.fbcdn.net/v/t1.0-9/12308259_753900598089381_803897555683033169_n.jpg?oh=fe47206f4ea9e55490644cad4e6d9430&oe=5AC89826'}/>
+                            <Avatar
+                                src={'https://scontent.fzty2-1.fna.fbcdn.net/v/t1.0-9/12308259_753900598089381_803897555683033169_n.jpg?oh=fe47206f4ea9e55490644cad4e6d9430&oe=5AC89826'}/>
                             <div className={'user-name'}>Harry Liu</div>
-                            <img className={'sign-out'} src={takeoffIcon} onClick={()=>{
+                            <img className={'sign-out'} src={takeoffIcon} onClick={() => {
                                 this._signOut();
                             }}/>
                         </div>
@@ -74,15 +75,17 @@ class AdminDashboard extends Component {
                     index={this.state.tabs.currentIndex}>
                     <div className={'tab-content'}>Dashboard</div>
                     <div className={'tab-content'}>
-                        <Paper className={'group'}>
+                        <div>
                             <h1>Basic</h1>
-                        </Paper>
-                        <Paper className={'group'}>
+                            <Paper className={'group'}>
+                            </Paper>
                             <h1>Navigation Bar</h1>
-                        </Paper>
-                        <Paper className={'group'}>
+                            <Paper className={'group'}>
+                            </Paper>
                             <h1>Footer</h1>
-                        </Paper>
+                            <Paper className={'group'}>
+                            </Paper>
+                        </div>
                     </div>
                     <div className={'tab-content'}>Home</div>
                     <div className={'tab-content'}>Day Of</div>

@@ -14,7 +14,7 @@ body {
 ::-webkit-scrollbar {
     background : transparent;
     overflow   : visible;
-    width      : 17px;
+    width      : 6px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -27,12 +27,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
-    border-width : 4px 6px;
+    border-width : 0 0;
     min-width    : 40px;
 }
 
 ::-webkit-scrollbar-thumb:vertical {
-    border-width : 6px 4px;
+    border-width : 0 0;
     min-height   : 40px;
 }
 
