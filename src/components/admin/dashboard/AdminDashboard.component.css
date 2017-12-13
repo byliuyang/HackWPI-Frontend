@@ -1,0 +1,57 @@
+.admin-dashboard {
+    background-color : #eee;
+    position         : fixed;
+    top              : 0;
+    bottom           : 0;
+    left             : 0;
+    right            : 0;
+}
+
+.admin-dashboard .logo {
+    margin-right: 26px;
+    transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.admin-dashboard .logo:hover {
+    opacity: 0.8;
+}
+
+.admin-dashboard .app-bar {
+    background-color: #ba3f3f;
+}
+
+.admin-dashboard .app-bar .title {
+    letter-spacing: 3px;
+}
+
+.admin-dashboard .app-bar .user-info {
+    position: absolute;
+    display: flex;
+    right: 24px;
+}
+
+.admin-dashboard .app-bar .user-info .user-name {
+    margin-left: 16px;
+    font-size: 20px;
+    padding-top: 8px;
+    letter-spacing: 2px;
+}
+
+.admin-dashboard .tab-bar {
+    background-color: white;
+}
+
+.admin-dashboard .tab-content, .admin-dashboard .tab-content .group  {
+    padding: 40px;
+}
+
+.admin-dashboard .tab-content .group:not(:first-child) {
+    margin-top: 40px;
+}
+
+.admin-dashboard .tab-content .group h1 {
+    color: #777777;
+    font-weight: 500;
+    font-size: 28px;
+    margin: 0;
+}
