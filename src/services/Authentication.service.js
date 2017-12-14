@@ -1,6 +1,8 @@
+import environment from "../Environment";
+
 class AuthenticationService {
     constructor() {
-        this.BASE_URL = `/api/oauth2`;
+        this.BASE_URL = `${environment().API_BASE_URL}/oauth2`;
 
         this.AUTHENTICATED_KEY = 'authenticated';
         this.TOKEN_KEY = 'token';

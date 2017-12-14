@@ -1,6 +1,8 @@
+import environment from "../Environment";
+
 class AppStateService {
     constructor() {
-        this.BASE_URL = `/api`;
+        this.BASE_URL = environment().API_BASE_URL;
         this.TOKEN_KEY = 'token';
     }
 

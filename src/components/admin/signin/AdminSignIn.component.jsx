@@ -9,6 +9,7 @@ import authenticationService from './../../../services/Authentication.service';
 
 import './AdminSignIn.component.css';
 import {withRouter} from "react-router-dom";
+import {Button, Snackbar} from "material-ui";
 
 const styles = theme => ({
     inputLabelFocused: {
@@ -26,6 +27,10 @@ class AdminSignIn extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            snackBar: {
+                open: false,
+                message: ''
+            },
             email: '',
             password: ''
         };
@@ -45,11 +50,25 @@ class AdminSignIn extends Component {
             .then(() => {
                 this.props.history.push('/admin');
             }, () => {
+                this._showSnackBar('Username or password is incorrect')();
             });
     }
 
+    _showSnackBar(message) {
+        return () => {
+            this.state.snackBar.message = message;
+            this.state.snackBar.open = true;
+            this.setState(this.state);
+        }
+    }
+
+    _closeSnackBar() {
+        this.state.snackBar.open = false;
+        this.setState(this.state);
+    }
+
     componentWillMount() {
-        if(authenticationService.isAuthenticated()) {
+        if (authenticationService.isAuthenticated()) {
             console.log('authenticated');
             this.props.history.push('/admin');
         }
@@ -102,7 +121,23 @@ class AdminSignIn extends Component {
                         </Grid>
                     </Grid>
                 </Grid>
+                <Snackbar
+                    anchorOrigin={{vertical: 'top', horizontal: 'center'}}
+                    open={this.state.snackBar.open}
+                    SnackbarContentProps={{
+                        'aria-describedby': 'message-id',
+                    }}
+                    message={<span id="message-id">{this.state.snackBar.message}</span>}
+                    action={
+                        <Button color="accent" dense onClick={() => {
+                            this._closeSnackBar();
+                        }}>
+                            OK
+                        </Button>
+                    }
+                />
             </div>
+
         );
     }
 }
